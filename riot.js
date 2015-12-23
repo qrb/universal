@@ -1,10 +1,8 @@
 function Module(exports) {
-    exports.action = function() {
-        console.log("DEPENDENCY METHOD");
-    }
+    exports.version = "vFAKE";
 }
 
-Module.prototype.global = "dependency";
+Module.prototype.global = "fake_riotjs_to_test_with_requirejs";
 
 // Module UMD Loader
 (function (g, f) {

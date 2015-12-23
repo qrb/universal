@@ -1,0 +1,29 @@
+{
+  "name": "universal",
+  "version": "1.0.0",
+  "description": "universal module loader",
+  "main": "test.node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qrb/universal.git"
+  },
+  "keywords": [
+    "universal", "UMD", "module"
+  ],
+  "author": {
+    "name": "Lee Tagg",
+    "email": "lee@anycode.io",
+    "url": "https://github.com/qrb"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qrb/universal/issues"
+  },
+  "homepage": "https://github.com/qrb/universal#readme",
+  "devDependencies": {
+    "riot": "^2.3.12"
+  }
+}

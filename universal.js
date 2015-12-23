@@ -1,18 +1,18 @@
-(function (root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        // AMD. Register as an anonymous module.
-        define(['exports', 'dependency'], factory);
-    } else if (typeof exports === 'object' && typeof exports.nodeName !== 'string') {
-        // CommonJS
-        factory(exports, require('./dependency'));
-    } else {
-        // Browser globals
-        factory((root.universal = {}), root.dependency);
-    }
-}(this, function (exports, dependency) {
-    dependency.action()
+function Module(exports, riot) {
+    console.log("RIOT VERSION: "+riot.version);
 
-    exports.action = function () {
-        console.log("UNIVERSAL MODULE METHOD")
-    };
-}));
+    exports.action = function() {
+        console.log("UNIVERSAL MODULE METHOD");
+    }
+}
+
+Module.prototype.dependencies = ['riot'];
+Module.prototype.global = "universal";
+
+// Module UMD Loader
+(function (g, f) {
+    var d=Module.prototype.dependencies,gn=Module.prototype.global
+    if (typeof define==='function'&&define.amd){define(['exports'].concat(d||[]),f)}
+    else if (typeof exports==='object'&&typeof exports.nodeName!=='string'){f.apply(this,[exports].concat(d?d.map(require):[]))}
+    else {f.apply(this, [(g[gn]={})].concat(d?d.map(function(d){return g[d]}):[]))}
+}(this, Module));

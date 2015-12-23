@@ -1,2 +1,3 @@
 var u = require('./universal');
-u.action();
+
+u.action()
